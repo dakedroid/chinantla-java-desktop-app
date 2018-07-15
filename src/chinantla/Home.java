@@ -22,6 +22,7 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         setLocationRelativeTo(null);
+        entradas.setVisible(false);
     }
     
     public void showEntradas(){
@@ -38,7 +39,7 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        users1 = new javax.swing.JPanel();
+        menu = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lbl_sent = new javax.swing.JLabel();
         lbl_inbox1 = new javax.swing.JLabel();
@@ -73,16 +74,18 @@ public class Home extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        entradas = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtTeo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 680));
 
-        users1.setBackground(new java.awt.Color(255, 255, 255));
-        users1.setForeground(new java.awt.Color(255, 255, 255));
-        users1.setPreferredSize(new java.awt.Dimension(1200, 680));
+        menu.setBackground(new java.awt.Color(255, 255, 255));
+        menu.setForeground(new java.awt.Color(255, 255, 255));
+        menu.setPreferredSize(new java.awt.Dimension(1200, 680));
 
         jPanel1.setBackground(new java.awt.Color(245, 227, 189));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -409,33 +412,80 @@ public class Home extends javax.swing.JFrame {
         jLabel19.setPreferredSize(new java.awt.Dimension(710, 680));
         content.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 680));
 
-        javax.swing.GroupLayout users1Layout = new javax.swing.GroupLayout(users1);
-        users1.setLayout(users1Layout);
-        users1Layout.setHorizontalGroup(
-            users1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(users1Layout.createSequentialGroup()
+        entradas.setBackground(new java.awt.Color(255, 255, 255));
+        entradas.setForeground(new java.awt.Color(255, 255, 255));
+        entradas.setPreferredSize(new java.awt.Dimension(950, 680));
+        entradas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtTeo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtTeo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Clave", "Nombre", "Direccion", "Teléfono", "Edad", "Género", "Fecha de Nacimiento", "Nivel"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtTeo.setGridColor(new java.awt.Color(255, 255, 255));
+        jtTeo.setRowHeight(20);
+        jtTeo.setSelectionBackground(new java.awt.Color(1, 198, 83));
+        jtTeo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtTeoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jtTeo);
+
+        entradas.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 87, 930, 593));
+
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(users, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                    .addGap(0, 257, Short.MAX_VALUE)
+                    .addComponent(entradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-        users1Layout.setVerticalGroup(
-            users1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(users, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(entradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(users1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 1213, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(users1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -452,6 +502,8 @@ public class Home extends javax.swing.JFrame {
 
         content.setVisible(true);
         users.setVisible(true);
+        
+        entradas.setVisible(false);
 
     }//GEN-LAST:event_lbl_inbox1MouseClicked
 
@@ -465,6 +517,8 @@ public class Home extends javax.swing.JFrame {
 
         content.setVisible(false);
         users.setVisible(false);
+        
+        entradas.setVisible(true);
         
         
     }//GEN-LAST:event_lbl_markMouseClicked
@@ -517,6 +571,10 @@ public class Home extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jtTeoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtTeoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtTeoMouseClicked
 
     void doMove(MouseEvent evt) {
         int x = evt.getXOnScreen();
@@ -572,6 +630,7 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel close;
     private javax.swing.JPanel content;
+    private javax.swing.JPanel entradas;
     private javax.swing.JLabel img;
     private javax.swing.JLabel indicator;
     private javax.swing.JLabel indicator1;
@@ -598,12 +657,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jtTeo;
     private javax.swing.JLabel lbl_inbox1;
     private javax.swing.JLabel lbl_mark;
     private javax.swing.JLabel lbl_outbox;
     private javax.swing.JLabel lbl_sent;
     private javax.swing.JLabel lbl_trash;
+    private javax.swing.JPanel menu;
     private javax.swing.JPanel users;
-    private javax.swing.JPanel users1;
     // End of variables declaration//GEN-END:variables
 }
